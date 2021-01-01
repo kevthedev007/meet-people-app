@@ -1,0 +1,9 @@
+extends header
+block content
+    h1 Welcome to meet people!
+    each user in users
+        div(class="panel panel-default")
+            div(class="panel-heading")
+                a(href="/users/" + user.username) #{user.name()}
+            if user.bio
+                div(class="panel-body") #{user.bio}

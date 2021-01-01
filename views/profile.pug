@@ -1,0 +1,9 @@
+extends header
+block content
+    if currentUser && currentUser.id == user.id
+        a(href='/edit', class='pull-right') Edit Your Profile
+    h2 #{user.name()}
+    h3 Joined on #{user.createdAt}
+    if user.bio
+        div() 
+            h4 #{user.bio}

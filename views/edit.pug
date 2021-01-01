@@ -1,0 +1,12 @@
+extends header
+block content
+    h1 Edit Your Profile
+
+    form(action="/edit", method="POST")
+        input(type="text", name="displayName",  class="form-control", placeholder="Display name", value=currentUser.displayName)
+        br
+        textarea(name="bio", class="form-control", placeholder="tell us about yourself", value=currentUser.bio)
+        br
+        input(type="submit", value="update", class="btn btn-primary btn-block")
+       
+        

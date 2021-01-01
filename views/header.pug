@@ -1,0 +1,30 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+        title Meet People
+    body
+        div(class='navbar navbar-default navbar-static-top' role='navigation')
+            div(class='container')
+                div(class='navbar-header')
+                    a(class='navbar-brand' href='/') Meet People
+                ul(class='nav navbar-nav navbar-right')
+                    if(!currentUser)
+                        li  
+                            a(href='/login') Login
+                        li
+                            a(href='/signup') Sign up
+                    else
+                        li 
+                            a(href='/users/' + currentUser.username) Hello, #{currentUser.name()}
+                        li 
+                            a(href='/logout') Logout
+        div(class='container')
+        if errors
+            for error, i in errors
+                div.alert.alert-danger #{error}
+        if infos 
+            for info, i in infos
+                div.alert.alert-info #{info}
+    block content

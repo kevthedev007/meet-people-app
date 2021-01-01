@@ -1,0 +1,13 @@
+extends header
+block content
+    h1 Login here
+    form(action="/login", method="POST")
+        fieldset(class="form-group")
+        p
+        | Email:
+        input(type="text", name="username", class="form-control", placeholder="username" required autofocus) 
+        br
+        | Password:
+        input(type="password", name="password",  class="form-control", placeholder="password" required) 
+        br
+        input(type="submit", value= "Log in", class ="btn btn-primary btn-block")
